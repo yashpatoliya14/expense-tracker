@@ -34,7 +34,7 @@ export default function Overview() {
     const navigate = useNavigate()
     return (
         <><div className="row justify-content-center my-5 ">
-            <div className="col-8">
+            <div className="col-md-8 table-responsive col-11">
                 {msg ? <div className="row text-center text-danger bg-dark p-5 fs-2 "><div className="col"><i class="fa-solid fa-exclamation mx-2 bg-danger p-4  rounded-pill text-dark"></i>Please Enter Entry </div></div> :
                     <table class="table table-dark">
                         <thead>
@@ -83,34 +83,33 @@ export default function Overview() {
             </div>
         </div>
 
-            {msg ? null :(
-                <div className="container bg-dark text-light">
-                    <div className="row justify-content-center ">
-                        <div className="col-auto fs-2 mx-4">
-                            Total Earning :
-                        </div>
-                        <div className="col-auto fs-2 mx-4">
-                            {earning}
-                        </div>
-                    </div>
+            {msg ? null : (
+                <div className="container p-3">
+
                     <div className="row justify-content-center">
-                        <div className="col-auto fs-2 mx-4">
-                            Total Expense :
-                        </div>
-                        <div className="col-auto fs-2 mx-4">
-                            {expense}
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-auto fs-2 mx-4">
-                            Total Profit :
-                        </div>
-                        <div className={`col-auto fs-2 ${earning - expense >= 0 ? 'bg-success' : 'bg-danger'} rounded mx-4`}>
-                            {earning - expense}
+                        <div className="col-md-6 col-sm-10 col">
+                            <table class="table text-center   fs-4 table-dark text-light">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Total Earning</th>
+                                        <td>{earning}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Total Expense</th>
+                                        <td>{expense}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Profit</th>
+                                        <td colspan="2" className={`${earning - expense >= 0 ? 'bg-success' : 'bg-danger'}`}>{earning - expense}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
                         </div>
                     </div>
                 </div>
-                )}
+            )}
 
         </>
     )

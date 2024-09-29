@@ -15,6 +15,7 @@ root.render(
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Layout/>}>
+          <Route index element={<Add/>}/>
           <Route path='/add' element={<Add/>}/>
           <Route path='/edit/:id' element={<Edit/>}/>
 

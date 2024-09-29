@@ -54,7 +54,7 @@ export default function Edit() {
     return (
         <>
             <div className="row justify-content-center my-5">
-                <div className="col-4 bg-dark text-white p-5 rounded">
+                <div className="col-md-6 col-lg-4 col-sm-8 col-11 bg-dark text-white p-5 rounded">
                 <h1 className="mb-5">Edit</h1>
                 <form>
                     <div class="mb-3">
